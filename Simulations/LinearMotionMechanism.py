@@ -180,6 +180,7 @@ __main__()
 plt.plot(time, velocity_values)
 plt.plot(time, acceleration_values)
 plt.plot(time, position_values)
+plt.plot(time, time)
 plt.legend(['velocity', 'acceleration', 'position'], loc='upper right')
 
 plt.show()

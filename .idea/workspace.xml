@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60c62b5f-40d1-44c5-861e-af89167ce9b8" name="Default" comment="init commit">
-      <change beforePath="$PROJECT_DIR$/Linear.py" beforeDir="false" afterPath="$PROJECT_DIR$/Linear.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulations/LinearMotionMechanism.py" beforeDir="false" afterPath="$PROJECT_DIR$/Simulations/LinearMotionMechanism.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +28,8 @@
       <file leaf-file-name="LinearMotionMechanism.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Simulations/LinearMotionMechanism.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="182" column="71" selection-start-line="182" selection-start-column="71" selection-end-line="182" selection-end-column="71" />
+            <state relative-caret-position="454">
+              <caret line="183" column="31" lean-forward="true" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -64,6 +64,9 @@
     <findStrings>
       <find>import matplotlib\.pyplot as plt\nfrom enum import Enum\nfrom Simulations import AppConstants\n\ngear_ratio \= None\nmotor \= None\nmotor_count \= None\nmass_on_system \= None\nvelocity_constanct \= None\ntorque_constant \= None\npulley_radius \= None\nmotor_resistance \= None\ncurrent_voltage \= 0\ncurrent_mechanism_position \= 0\ncurrent_mechanism_velocity \= 0\ncurrent_mechanism_acceleration \= 0\n\n\nclass MotorType\(Enum\)\:\n    pro \= AppConstants\.Pro\n    bag \= AppConstants\.Bag\n    cim \= AppConstants\.Cim\n    mini_cim \= AppConstants\.MiniCim\n\n\ndef __init__\(\)\:\n    global gear_ratio\n    gear_ratio \= 25\n    global motor\n    motor \= MotorType\.cim\n    global motor_count\n    motor_count \= 2\n    global mass_on_system\n    mass_on_system \= 30\n    global pulley_radius\n    pulley_radius \= \.855\n    set_motor_values\(\)\n\n\ndef set_motor_values\(\)\:\n    global velocity_constant\n    global torque_constant\n    global motor_resistance\n    global motor_count\n    if motor \=\= MotorType\.pro\:\n        velocity_constant \= AppConstants\.Pro\.motor_kv\n        torque_constant \= AppConstants\.Pro\.motor_kt\n        motor_resistance \= AppConstants\.Pro\.resistance\n    elif motor \=\= MotorType\.bag\:\n        velocity_constant \= AppConstants\.Bag\.motor_kv\n        torque_constant \= AppConstants\.Bag\.motor_kt\n        motor_resistance \= AppConstants\.Bag\.resistance\n    elif motor \=\= MotorType\.cim\:\n        velocity_constant \= AppConstants\.Cim\.motor_kv\n        torque_constant \= AppConstants\.Cim\.motor_kt\n        motor_resistance \= AppConstants\.Cim\.resistance\n    elif motor \=\= MotorType\.mini_cim\:\n        velocity_constant \= AppConstants\.MiniCim\.motor_kv\n        torque_constant \= AppConstants\.MiniCim\.motor_kt\n        motor_resistance \= AppConstants\.MiniCim\.resistance\n    else\:\n        raise TypeError\(\'invalid motor type\'\)\n    torque_constant \= torque_constant\*2\*motor_count\n\ndef update_voltage\(voltage\)\:\n    global current_voltage\n    current_voltage \= voltage\n\n\ndef periodic\(interval_in_ms\)\:\n    calculate_distance\(interval_in_ms\)\n    calculate_mechanism_velocity\(interval_in_ms\, current_voltage\)\n\ndef calculate_mechanism_acceleration\(voltage\)\:\n    global current_mechanism_acceleration\n    current_mechanism_acceleration \= \(\-torque_constant\*gear_ratio\*gear_ratio\/\(velocity_constanct\*motor_resistance\*pulley_radius\*pulley_radius\*mass_on_system\)\*current_mechanism_velocity\+gear_ratio\*torque_constant\/\(motor_resistance\*pulley_radius\*mass_on_system\)\*voltage\)\n\n\ndef calculate_mechanism_velocity\(interval_in_ms\, voltage\)\:\n    global current_mechanism_velocity\n    current_mechanism_velocity \+\= ms_to_seconds\(interval_in_ms\)\*calculate_mechanism_acceleration\(voltage\)\n\ndef ms_to_seconds\(time_in_ms\)\:\n    return time_in_ms \* \.001\n\ndef calculate_distance\(interval_in_ms\)\:\n    global current_mechanism_position\n    current_mechanism_position \+\= ms_to_seconds\(interval_in_ms\)\*current_mechanism_velocity\n    update_voltage\(12\)\n    periodic\(1\)\n\ndef __main__\(\)\:\n    global current_mechanism_position\n    global current_mechanism_velocity\n    global current_mechanism_acceleration\n\n    i \= 0\n    for current_mechanism_position in range\(0\,40\)\:\n        i \+\= 1\n        if i\%100 \=\= 0\:\n            print\(i\+\&quot;\:\&quot; \+ \&quot;\\tPosition\&quot; \+ current_mechanism_position \+ \&quot; \\t Velocity\:    \&quot; \+ current_mechanism_velocity \+ \&quot; \\t Acceleration\: \&quot; \+ current_mechanism_acceleration\)\n\n\n\nif __name__ \=\= \'__main\-\-\'\: __main__\(\)\n\n\n\n\n\n\n\n\n</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -80,12 +83,12 @@
         <option value="$PROJECT_DIR$/LinearMotionMechanism.py" />
         <option value="$PROJECT_DIR$/Simulations/AppConstants.py" />
         <option value="$PROJECT_DIR$/Simulations/__init__.py" />
+        <option value="$PROJECT_DIR$/Equilibrium.py" />
         <option value="$PROJECT_DIR$/Simulations/LinearMotionMechanism.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="width" value="960" />
     <option name="height" value="1080" />
   </component>
@@ -200,19 +203,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="0" y="0" width="960" height="1080" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76117104" visible="true" weight="0.025559105" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76117104" visible="true" weight="0.25925925" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.11022364" side_tool="true" visible="true" weight="0.32041883" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.1633987" side_tool="true" visible="true" weight="0.32041883" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4992658" weight="0.3382857" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.88977635" visible="true" weight="0.32041883" />
-      <window_info anchor="right" id="Structure" order="3" sideWeight="0.23850085" side_tool="true" visible="true" weight="0.013312034" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8366013" visible="true" weight="0.32041883" />
+      <window_info anchor="right" id="Structure" order="3" sideWeight="0.23850085" side_tool="true" visible="true" weight="0.027233116" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="1" sideWeight="0.23882897" side_tool="true" visible="true" weight="0.025559105" />
+      <window_info id="Favorites" order="1" sideWeight="0.23882897" side_tool="true" visible="true" weight="0.25925925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -285,10 +288,13 @@
     <entry file="file://$PROJECT_DIR$/Simulations/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Equilibrium.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Simulations/LinearMotionMechanism.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="182" column="71" selection-start-line="182" selection-start-column="71" selection-end-line="182" selection-end-column="71" />
+        <state relative-caret-position="454">
+          <caret line="183" column="31" lean-forward="true" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
