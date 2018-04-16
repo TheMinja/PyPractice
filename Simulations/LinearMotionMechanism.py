@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 from enum import Enum
 from matplotlib import pyplot as plt
 import numpy as np
