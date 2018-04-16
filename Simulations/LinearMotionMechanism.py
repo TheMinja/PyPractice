@@ -168,7 +168,7 @@ def __main__():
         acceleration_values.append(current_mechanism_acceleration)
         time.append(i)
 
-        update_voltage(12)
+        update_voltage(5)
         periodic(1)
         i += 1
         if i%100 == 0:
@@ -180,7 +180,6 @@ __main__()
 plt.plot(time, velocity_values)
 plt.plot(time, acceleration_values)
 plt.plot(time, position_values)
-plt.plot(time, time)
 plt.legend(['velocity', 'acceleration', 'position'], loc='upper right')
 
 plt.show()
